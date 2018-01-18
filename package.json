@@ -23,6 +23,9 @@
   },
   "homepage": "https://github.com/hamer86/frontend-workflow#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "browser-sync": "^2.23.5",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.2.0",
+    "gulp-sass": "^3.1.0"
   }
 }
