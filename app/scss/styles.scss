@@ -1,8 +1,253 @@
+// Colors
+$white: #ffffff;
+$brand-primary: #00AE8E;
+$brand-secondary: #63BDDB;
+$text-color: #666666;
+$gray-lightest: #F9F9F9;
+$gray-light: #E9E8E8;
+$gray: #D8D8D8;
+$gray-dark: #C1C1C1;
+$blue: #00A4FF;
+$pink: #EF77FE;
+
+//Fonts
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:300,500,700,800&subset=latin-ext');
+
+//Page height
+$ph: 100vh;
+
+html {
+
+    font-size: 16px;
+
+}
+
 body {
-    width: percentage(5/7);
+
+    color: $text-color;
+    font-family: 'Libre Franklin', sans-serif;
+    height: $ph;
+    margin: 0 auto;
+
+
+}// Header and navigation
+
+header{
+
+    border-bottom: 1px solid #E9E8E8;
+    height: 80px;
+    width: 100vw;
+    z-index: 2;
+
+    nav{
+
+        align-content: center;
+        align-items: center;
+        background-color: $white;
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        justify-items: center;
+        padding: 0rem 12.5rem;
+
+        img{
+
+            max-height: 2rem;
+
+        }
+
+        ul {
+
+            align-items: center;
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li{
+
+                display: inline-block;
+                margin-left: 3.75rem;
+                font-weight: 500;
+                font-size: 11px;
+
+            }
+
+        }
+
+        .search{
+
+            display: flex;
+
+            li{
+
+                margin-left: 1rem;
+
+            }
+
+        }
+
+    }
+
+}//Links
+
+a{
+
+    color: $brand-primary;
+    text-decoration: none;
+
+}
+
+a:hover, .selected {
+
+    color: $text-color;
+    position: relative;
+    top: -5px;
+
+    &::before{
+
+        background-color: $brand-primary;
+        content: "";
+        display: block;
+        height: 10px;
+        left: 50%;
+        opacity: 0.6;
+        width: 100%;
+        position: relative;
+        top: 1.2rem;
+        transform: translateY(-25%);
+
+    }
+
+}// Main layout
+
+main{
+
+    align-items: center;
+    box-sizing: border-box;
     display: flex;
-    width: 100%;
-    height: 100px;
-    opacity: 1;
-  }
-  
+    height: 100vh;
+    justify-content: space-between;
+    padding: 6.25rem 12.5rem 1rem;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: -1;
+
+}
+
+.mst-landing-content{
+
+    width: 45%;
+
+}
+
+.mst-landing{
+
+    background-image: url("../images/landing-background.png");
+    background-position-y: bottom;
+    background-position-x: 650px;
+    background-repeat: no-repeat;
+    background-size: 600px;
+    height: 100vh;
+
+}//Headings and Text
+
+h1{
+
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 3rem;
+    margin: 0;
+
+
+    span.green{
+
+        color: $brand-primary;
+        font-weight: 800;
+
+    }
+
+}
+
+p{
+
+    font-size: 1rem;
+    font-weight: 300;
+
+}// Buttons
+
+.button{
+
+    background-color: $brand-primary;
+    border-radius: 1rem;
+    border: none;
+    box-sizing: border-box;
+    color: white;
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    height: 3rem;
+    letter-spacing: 3px;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    width: 17.5rem;
+
+    &:hover{
+
+        background-color: darken($brand-primary, 15%);
+
+    }
+
+    &--hollow{
+
+        background-color: white;
+        border: solid $brand-primary 1px;
+        color: $brand-primary;
+
+    }
+
+    &--hollow:hover{
+
+        background-color: $white;
+        border-color: darken($brand-primary, 15%);
+        color: darken($brand-primary, 15%);
+
+    }
+
+}// Generic
+
+.mt-15{
+
+    margin-top: 15px;
+
+}
+
+
+@media (min-width: 1366px) {
+
+
+    header {
+
+        nav{
+
+            padding: 0px 200px;
+
+        }
+
+    }
+
+    .mst-button--hollow{
+
+        display: inherit;
+
+    }
+
+    .mst-landing{
+
+        background-position-x: 1150px;
+
+    }
+
+}
